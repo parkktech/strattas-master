@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+
+
+<config>
+    <modules>
+        <Strattas_Master>
+            <version>2.3.5</version>
+            <platform>ce</platform>
+        </Strattas_Master>
+    </modules>
+    <admin>
+
+        <routers>
+
+            <strattasmaster>
+
+                <use>admin</use>
+
+                <args>
+
+                    <module>Strattas_Master</module>
+
+                    <frontName>strattasmaster</frontName>
+
+                </args>
+
+            </strattasmaster>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <strattas_master before="Mage_Adminhtml">Strattas_Master_Adminhtml</strattas_master>
+                    </modules>
+                </args>
+            </adminhtml>
+
+        </routers>
+
+    </admin>
+    <global>
+        <blocks>
+            <strattasmaster>
+                <class>Strattas_Master_Block</class>
+            </strattasmaster>
+            <adminhtml>
+                <rewrite>
+                    <notification_window>Strattas_Master_Block_Notification_Window</notification_window>
+                </rewrite>
+                <rewrite>
+                    <system_config_edit>Strattas_Master_Block_Expired</system_config_edit>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <resources>
+            <strattasmaster_setup>
+                <setup>
+                    <module>Strattas_Master</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </strattasmaster_setup>
+            <strattasmaster_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </strattasmaster_write>
+            <strattasmaster_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </strattasmaster_read>
+        </resources>
+        <models>
+            <strattasmaster>
+                <class>Strattas_Master_Model</class>
+            </strattasmaster>
+        </models>
+
+        <helpers>
+            <strattasmaster>
+                <class>Strattas_Master_Helper</class>
+            </strattasmaster>
+        </helpers>
+    </global>
+	
+	<frontend>
+		<layout>
+            <updates>
+                <strattasmaster>
+                    <file>strattasmaster.xml</file>
+                </strattasmaster>
+            </updates>
+        </layout>
+	</frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <strattasmaster module="Strattas_Master">
+                    <file>strattas_master.xml</file>
+                </strattasmaster>
+            </updates>
+        </layout>
+
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <strattasmaster>
+                                            <title>Strattas - All</title>
+                                        </strattasmaster>
+                                        <ststore>
+                                            <title>Strattas - Extensions Store</title>
+                                        </ststore>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <strattasmaster_exts>
+                        <type>singleton</type>
+                        <class>strattasmaster/feed_extensions</class>
+                        <method>check</method>
+                    </strattasmaster_exts>
+                    <strattasmaster_check>
+                        <type>singleton</type>
+                        <class>strattasmaster/feed_extensions</class>
+                        <method>checkExtensions</method>
+                    </strattasmaster_check>
+                    <strattasmaster_upds>
+                        <type>singleton</type>
+                        <class>strattasmaster/feed_updates</class>
+                        <method>check</method>
+                    </strattasmaster_upds>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+
+    </adminhtml> 
+    <default>
+        <strattasmaster>
+            <feed>
+                <url>http://www.strattasecomm.com/blog/feed/?tag=feed&amp;community=1</url>
+                <use_https>0</use_https>
+                <check_frequency>86400</check_frequency>
+                <enabled>1</enabled>
+                <interests>INFO,PROMO,UPDATE_RELEASE,NEW_RELEASE,INSTALLED_UPDATE</interests>
+            </feed>
+        </strattasmaster>
+    </default>
+</config>

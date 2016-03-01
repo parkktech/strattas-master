@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <layout>
+        <updates>
+            <strattasmaster module="Strattas_Master">
+                <file>strattas_master.xml</file>
+            </strattasmaster>
+        </updates>
+    </layout>
+
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <strattasmaster>
+                                        <title>Strattas - All</title>
+                                    </strattasmaster>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <events>
+        <controller_action_predispatch>
+            <observers>
+                <strattasmaster_exts>
+                    <type>singleton</type>
+                    <class>strattasmaster/feed_extensions</class>
+                    <method>check</method>
+                </strattasmaster_exts>
+                <strattasmaster_upds>
+                    <type>singleton</type>
+                    <class>strattasmaster/feed_updates</class>
+                    <method>check</method>
+                </strattasmaster_upds>
+            </observers>
+        </controller_action_predispatch>
+    </events>
+</config>

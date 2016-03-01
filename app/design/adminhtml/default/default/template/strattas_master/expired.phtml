@@ -1,0 +1,30 @@
+<div class="content-header">
+
+    <table cellspacing="0">
+        <tr>
+            <td>
+                <h3><?php print $this->_section->label ?> Extension has been disabled</h3>
+            </td>
+            <td class="form-buttons"></td>
+        </tr>
+    </table>
+</div>
+
+<div id="messages">
+    <ul class="messages">
+        <li class="warning-msg">
+            <ul>
+                <li>
+                    <span>
+                        <?php print $this->_section->label ?> has been disabled. <br /> <br />
+                        Error Reference: <?php $licenceCheck = Mage::getSingleton('core/session')->getLicenceCheck(); ?>
+                        <?php print $licenceCheck[Mage::helper('strattasmaster/data')->getLicenceKeyFromSection($this->getRequest()->getParam('section'))] ?>
+
+                        <br /><br />
+                        Please <a style="color:red" href='<?php print Strattas_master_Helper_Config::RENEW_LICENCE ?>'>click here</a> to resolve now.
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

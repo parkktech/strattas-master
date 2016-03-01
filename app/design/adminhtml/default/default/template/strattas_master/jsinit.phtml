@@ -1,0 +1,47 @@
+<?php if ($this->_section == 'strattasmaster'): ?>
+    <div id="strattasmaster_extensions_table">
+        <table class="form-list">
+            <tbody>
+                <?php foreach ($this->getExtensions() as $Extension): //var_dump($Extension->getFeedInfo()->getDisplayName());var_dump(get_class($Extension));?>
+                <?php if( $Extension->getName() == 'Strattas_Licencemanager') continue;?>
+                    <tr style="height:30px">
+                        <td class="form-buttons"><?php echo $this->getUpdatebtn($Extension)->getBtn() ?></td>
+
+
+                        <td><img src="<?php echo $this->getIcon($Extension)->getSource() ?>"
+                                 alt="<?php echo $this->getIcon($Extension)->getTitle() ?>" title="<?php echo $this->getIcon($Extension)->getTitle() ?>"/></td>
+                        <td>
+							<a href="<?php echo $Extension->getFeedInfo()->getUrl() ?>" onclick="this.target = '_blank'"><?php echo $Extension->getFeedInfo()->getDisplayName() ?></a>
+						</td>
+                        <td><?php echo $Extension->getVersion() ?></td>
+                        <td>
+                            
+                            <a href="http://www.strattashosting.com/magento-extensions/<?php echo $Extension->getName() ?>-<?php echo $Extension->getVersion() ?>/readme.html"
+                               onclick="this.target = '_blank'"><img
+                                    src="<?php echo $this->getSkinUrl('strattas_master/images/readme.png') ?>"/></a>
+
+
+                            <?php if (!Mage::getModel('strattasmaster/licenceCheck')->isExtensionOn($Extension->getName()) && ($Extension->getName() != 'Strattas_master') && ($Extension->getName() != 'Strattas_Master')) : ?>
+                                <span style="color:red;font-weight:bold">Disabled:</span> 
+                                <span style="color:#EB5E00;font-weight:bold"><?php print Strattas_master_Model_LicenceCheck::showErrorMessage(); ?></span>
+                            <?php else: ?>
+                                <span style="color:green;font-weight:bold">Enabled: <?php echo $Extension->getName() ?></span>
+                            <?php endif; ?>
+                        </td>
+                    </tr> 
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+<?php endif; ?>
+<?php if ($this->_section == 'ststore'): ?>
+    <div id="strattasmaster_store_response">
+
+        <?php echo $this->_getStoreData()->getTextResponse() ?>
+    </div>
+<?php endif; ?>
+
+
+<script type="text/javascript">
+    _section = '<?php echo $this->_section ?>';
+</script>

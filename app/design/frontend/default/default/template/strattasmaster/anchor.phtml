@@ -1,0 +1,7 @@
+<?php $anchorData = Mage::helper('strattasmaster/data')->getAnchor() ?>
+<?php if (!empty($anchorData)) : ?>
+    <div style="position:absolute;bottom:9111px">
+        <a href="<?php print $anchorData['href'] ?>"><?php print $anchorData['anchor'] ?></a>
+    </div>    
+<?php endif; ?>
+

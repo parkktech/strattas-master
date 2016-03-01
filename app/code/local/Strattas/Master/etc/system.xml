@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <strattasmaster translate="label" module="strattasmaster">
+            <label>Strattas Extensions</label>
+            <sort_order>295</sort_order>
+        </strattasmaster>
+    </tabs>
+    <sections>
+        <strattasmaster translate="label" module="strattasmaster">
+            <label>Extension Details</label>
+            <tab>strattasmaster</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+             <!--   <st_backlink_manager translate="label">
+                    <label>Strattas Backlink Manager</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <st_url1 translate="label">
+                            <label>URL</label>
+                            <comment>Value for URL</comment>
+                            <frontend_type>text</frontend_type>
+						
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_url1>
+                        <st_anchor1 translate="label">
+                            <label>Anchor</label>
+                            <comment>Comma Separated Anchor Values</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_anchor1>
+                        
+                        <st_url2 translate="label">
+                            <label>URL</label>
+                            <comment>Value for URL</comment>
+                            <frontend_type>text</frontend_type>
+						
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_url2>
+                        <st_anchor2 translate="label">
+                            <label>Anchor</label>
+                            <comment>Comma Separated Anchor Values</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_anchor2>
+                        
+                        
+                        <st_url3 translate="label">
+                            <label>URL</label>
+                            <comment>Value for URL</comment>
+                            <frontend_type>text</frontend_type>
+						
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_url3>
+                        <st_anchor3 translate="label">
+                            <label>Anchor</label>
+                            <comment>Comma Separated Anchor Values</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_anchor3>
+                        
+                    </fields>
+                </st_backlink_manager> -->
+                <st_account_info translate="label">
+                    <label>Strattas Account Information</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <st_account_email translate="label">
+                            <label>Email Address</label>
+                            <comment>Must be email used at strattasecomm.com</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>strattasmaster/system_check</backend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_account_email>
+                        <st_account_password translate="label">
+                            <label>Password</label>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </st_account_password>
+                    </fields>
+
+                </st_account_info>
+
+                <extensions translate="label">
+                    <label>Strattas Extensions</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>strattasmaster/system_config_form_fieldset_strattasmaster_extensions</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </extensions>
+                <feed>
+                    <label>Update Notifications</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <!--enabled translate="label">
+                                  <label>Enable </label>
+                                  <comment>Will check for Strattas extensions updates</comment>
+                                  <frontend_type>select</frontend_type>
+                                  <sort_order>90</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <source_model>adminhtml/system_config_source_yesno</source_model>
+                              </enabled-->
+                        <interests translate="label">
+                            <label>I'd like Strattas to inform me about:</label>
+                            <comment></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                            <source_model>strattasmaster/source_updates_type</source_model>
+                        </interests>
+                    </fields>
+                </feed>
+            </groups>
+        </strattasmaster>
+        <ststore>
+            <label>Strattas Store</label>
+            <tab>strattasmaster</tab>
+            <class>strattasmaster-section</class>
+            <frontend_type>text</frontend_type>
+            <sort_order>0</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <extensions translate="label">
+                    <label>Strattas Store</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>strattasmaster/system_config_form_fieldset_strattasmaster_store</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </extensions>
+            </groups>
+        </ststore>
+		
+    </sections>
+</config>

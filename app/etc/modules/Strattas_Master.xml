@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Strattas_master>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Strattas_master>
+    </modules>
+</config>

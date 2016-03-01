@@ -1,0 +1,32 @@
+
+#Comments are supported, begin a line with a hash
+app/code/local/Strattas/Core
+app/code/local/Strattas/Master
+app/design/adminhtml/default/default/layout/strattas_master.xml
+app/design/adminhtml/default/default/template/strattas_master
+app/design/frontend/default/default/template/strattasmaster
+app/etc/modules/Strattas_Core.xml
+app/etc/modules/Strattas_Master.xml
+js/strattas_master/strattas_master.js
+skin/adminhtml/default/default/strattas_master
+skin/frontend/default/default/strattas_master
+
+
+# Source and destination can have different names.
+#en_US.csv              app/locale/en_US/My_Module.csv
+
+# Destination file name is not required if the same as the source.
+#My_Module.xml          app/etc/modules/
+
+# Leave out the destination entirely to assume the same path as the source.
+#lib/Somelib
+
+# Bash extended glob patterns supported.
+#skin/css/*             skin/frontend/base/default/css/
+#skin/js/*              skin/frontend/base/default/js/
+
+# Import another modman module
+#@import                modules/Fooman_Speedster
+
+# Execute a command on the shell
+#@shell                 rm -rf $PROJECT/var/cache/*
